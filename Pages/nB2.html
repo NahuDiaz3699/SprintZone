@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LIBRERIAS E ICONOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+Oriya:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Pattaya&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Timmana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Css/paginasZapas.css">
+    <link rel="icon" href="../images/logo.SprintZone.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>SprintZone</title>
+</head>
+<body>
+    <header id="header">
+        <nav class="navBar">
+            <div class="logoBox">
+                <a href="../index.html"><img class="logoHeader" src="../images/logo.SprintZone.png" alt="Logo"></a>
+            </div>
+            <div class="menuBox">
+                <span class="material-symbols-outlined">menu</span>
+                <div class="boxMenu">
+                    <ul class="menu">
+                        <li><a href="../Pages/nike.html">Nike</a></li>
+                        <li><a href="../Pages/adidas.html">Adidas</a></li>
+                        <li><a href="../Pages/newBalance.html">New Balance</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="carrito" onclick="toggleCartMenu()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+            <div class="cart-container">
+                <div id="cartMenu" class="cart-menu">
+                    <h3>Carrito de Compras</h3>
+                    <div id="cartItems">
+                        <!-- Los productos del carrito se añadirán aquí dinámicamente -->
+                        <ul id="cartList"></ul>
+                    </div>
+                    <div class="cart-actions">
+                        <button onclick="clearCart()">Borrar Carrito</button>
+                        <button onclick="checkout()">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="paginaZapas">
+            <div class="gridCompra">
+                <div class="contImgCompra">
+                    <img src="../images/NewBalance/FuelCell-superComp-Trainer-V3.2.jpeg" alt="Adizero Boston 12" class="imgCompra">
+                    <img src="../images/NewBalance/FuelCell-superComp-Trainer-V3.2.jpeg" alt="Adizero Boston 12" class="imgCompra">
+                    <img src="../images/NewBalance/FuelCell-superComp-Trainer-V3.3.jpeg" alt="Adizero Boston 12" class="imgCompra">
+                    <img src="../images/NewBalance/FuelCell-superComp-Trainer-V3.2.jpeg" alt="Adizero Boston 12" class="imgCompra">
+                </div>
+                <div class="mainImgContenedor">
+                    <img src="../images/NewBalance/FuelCell-superComp-Trainer-V3.jpeg" alt="Adizero Boston 12" class="imgCompraMain">
+                </div>
+            </div>
+            <div class="sectorCompra">
+                <div class="product-info">
+                    <p class="p1">FuellCell Trainer V3</p>
+                    <p class="p2">Zapatillas de Moda para Hombre</p>
+                    <div class="price">
+                        <span class="original-price">$459.999</span>
+                        <span class="current-price">$259.999</span>
+                        <span class="discount">40% de descuento</span>
+                        <p class="p2">Hasta 6x $26.000 sin interés</p>
+                    </div>
+                    <div class="size-selector">
+                        <h3>Seleccionar Talle (US)</h3>
+                        <a href="#" class="size-guide">Guía de talles</a>
+                        <div class="talles">
+                            <button>6</button>
+                            <button>6.5</button>
+                            <button>7</button>
+                            <button>7.5</button>
+                            <button>8</button>
+                            <button>8.5</button>
+                            <button>9</button>
+                            <button>9.5</button>
+                            <button>10</button>
+                            <button>10.5</button>
+                            <button>11</button>
+                            <button>11.5</button>
+                            <button>12</button>
+                            <button>12.5</button>
+                            <button>13</button>
+                            <button>14</button>
+                        </div>
+                        <button class="btnComprar2">Agregar al carrito</button>
+                        <a href="#" class="notify">Solicita tu talle si está agotado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+            <div class="logoBoxF">
+                <a href="../index.html"><img class="logoFooter" src="../images/logo.SprintZone.png" alt="Logo">
+            </div></a>
+            <p class="pFooter">SprintZone, 2024. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
