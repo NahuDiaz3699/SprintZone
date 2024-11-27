@@ -13,43 +13,60 @@
 
     <link rel="stylesheet" href="../Css/paginasZapas.css">
     <link rel="icon" href="../images/logo.SprintZone.png">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="../js/carrito.js" defer></script>
     <title>SprintZone</title>
 </head>
 <body>
     <header id="header">
-        <nav class="navBar">
+        <nav id="navBar">
             <div class="logoBox">
                 <a href="../index.html"><img class="logoHeader" src="../images/logo.SprintZone.png" alt="Logo"></a>
             </div>
-            <div class="menuBox">
-                <span class="material-symbols-outlined">menu</span>
-                <div class="boxMenu">
-                    <ul class="menu">
-                        <li><a href="../Pages/nike.html">Nike</a></li>
-                        <li><a href="../Pages/adidas.html">Adidas</a></li>
-                        <li><a href="../Pages/newBalance.html">New Balance</a></li>
-                    </ul>
+            <div class="contUl">
+                <ul class="navBar_ul">
+                    <li><a href="Pages/nike.html">Nike</a></li>
+                    <li><a href="Pages/adidas.html">Adidas</a></li>
+                    <li><a href="Pages/newBalance.html">New Balance</a></li>
+                </ul>
+            </div>
+
+            <div class="menuNcarrito">
+                <div class="carrito" onclick="toggleCartMenu()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="cart-container" id="cartContainer">
+                    <div id="cartMenu" class="cart-menu">
+                        <h3>Carrito de compras</h3>
+                        <div id="cartItems">
+                            <!-- Los productos del carrito se añadirán aquí dinámicamente -->
+                            <ul id="cartList"></ul>
+                        </div>
+                        <div class="payment-options">
+                            <label for="installments">Selecciona cuotas:</label>
+                            <select id="installments">
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                            </select>
+
+                            <label for="paymentMethod">Selecciona el método de pago:</label>
+                            <select id="paymentMethod">
+                                <option value="MercadoPago">MercadoPago</option>
+                                <option value="Tarjeta">Tarjeta de Crédito/Débito</option>
+                                <option value="Efectivo">Efectivo</option>
+                            </select>
+                        </div>
+                        <div class="cart-actions">
+                            <button onclick="clearCart()">Borrar Carrito</button>
+                            <button onclick="checkout()">Finalizar Compra</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
-        <div class="carrito" onclick="toggleCartMenu()">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="cart-count" id="cartCount">0</span>
-            <div class="cart-container">
-                <div id="cartMenu" class="cart-menu">
-                    <h3>Carrito de Compras</h3>
-                    <div id="cartItems">
-                        <!-- Los productos del carrito se añadirán aquí dinámicamente -->
-                        <ul id="cartList"></ul>
-                    </div>
-                    <div class="cart-actions">
-                        <button onclick="clearCart()">Borrar Carrito</button>
-                        <button onclick="checkout()">Finalizar Compra</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
 
     <main id="main">
@@ -71,10 +88,11 @@
                     <p class="p2">Zapatillas de Moda para Hombre</p>
                     <div class="price">
                         <span class="original-price">$239.999</span>
+                        <p class="p2">Hasta 6 cuotas sin interes</p>
                     </div>
                     <div class="size-selector">
                         <h3>Seleccionar Talle (US)</h3>
-                        <a href="#" class="size-guide">Guía de talles</a>
+                        <a href="../Pages/talles.html" class="size-guide">Guía de talles</a>
                         <div class="talles">
                             <button>6</button>
                             <button>6.5</button>
@@ -108,7 +126,5 @@
             </div></a>
             <p class="pFooter">SprintZone, 2024. Todos los derechos reservados.</p>
     </footer>
-    <script src="js/app.js"></script>
-
 </body>
 </html>
